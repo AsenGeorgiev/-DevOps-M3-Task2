@@ -17,6 +17,7 @@ Vagrant.configure(2) do |config|
     end
     web.vm.provision "shell", inline: <<EOS
     echo "192.168.99.99 salt" >> /etc/hosts
+    echo "192.168.99.99 db" >> /etc/hosts
     echo "* installing packges ..."
     apt-get update
     apt-get install -y git nano salt-minion python3 python3-pip python3-distro ca-certificates curl gnupg nginx
